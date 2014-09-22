@@ -1,0 +1,3 @@
+#Preprocessing a file. To remove square brackets and put each entry into different lines
+sed 's/\[//g;s/\]//g;s/},/}\
+/g' File1.txt > File2.txt
