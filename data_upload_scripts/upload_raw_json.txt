@@ -1,0 +1,7 @@
+﻿/*COPY marta_raw(DATA) from 'C:\Users\LAYLA\Documents\MARTA\AllHistory3.txt' DELIMITERS '#' CSV ;*/
+/*above, we are using # as the dummy delimiter so that PostgreSQL loads the whole file into a single column spanning multiple rows.*/
+
+/*if COPY doesn't work, use \COPY instead and run it as a psql script*/
+
+
+\COPY marta_raw(DATA) from 'C:\Users\LAYLA\Documents\MARTA\AllHistory_SeparateLines.txt' DELIMITERS '#';
