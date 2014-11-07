@@ -1,5 +1,6 @@
 -- To run from the terminal:
 -- psql -d adherencedb -a -f query_script.sql 
+-- generateQueryScript.py generates this kind of file.
 
 \set STOP_ID '901834'
 \set ROUTE_NUM '16'
