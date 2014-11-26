@@ -134,10 +134,10 @@ def randomDate(start, end):
 
 def sendmail(subj,msg):
 		import smtplib
-		gmail_user = "danielatemory@gmail.com"
-		gmail_pwd = "new passwor"
-		FROM = 'danielatemory@gmail.com'
-		TO =['dgarci8@emory.edu']
+		gmail_user = "your_own_email@gmail.com"
+		gmail_pwd = "your_password"
+		FROM = 'your_own_email@gmail.com'
+		TO =['destination_email@whatever_domain']
 		SUBJECT = subj
 		TEXT = msg
 		message = """\From: %s\nTo: %s\nSubject: %s\n\n%s""" % (FROM, ", ".join(TO), SUBJECT, "Problem") 
