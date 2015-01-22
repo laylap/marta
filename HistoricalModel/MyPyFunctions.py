@@ -1,4 +1,57 @@
 import os
+
+def getStopsAndCoords_Route(route_num):
+        f=open('aux.sql','w')
+        f.write("DROP TABLE IF EXISTS aux;\nselect stop_id,stop_lat,stop_lon into aux from stops where stop_id in (select stop_id from stop_times where trip_id = (select trip_id from trips where route_id = (select route_id from routes where route_short_name = '"+route_num+"') limit 1 ));;\n\copy aux to auxfile.csv delimiter ',';\n")
+        f.close()
+        os.system("psql -d adherencedb -a -f aux.sql")
+        f=open('auxfile.csv','r')
+        line=f.readlines()
+        f.close()
+        os.system("rm auxfile.csv aux.sql")
+        return line
+
+def getStopsAndCoords(trip):
+	f=open('aux.sql','w')
+        f.write("DROP TABLE IF EXISTS aux;\nselect stop_id,stop_lat,stop_lon into aux from stops where stop_id in (select stop_id from stop_times where trip_id = '"+str(trip)+"');\n\copy aux to auxfile.csv delimiter ',';\n")
+        f.close()
+        os.system("psql -d adherencedb -a -f aux.sql")
+        f=open('auxfile.csv','r')
+        line=f.readlines()
+        f.close()
+        os.system("rm auxfile.csv aux.sql")
+        return line
+
+
+def getDBLineOffset(db_name,offset):
+	f=open('getline.sql','w')
+        f.write("DROP TABLE IF EXISTS getline;\nselect * into getline from "+db_name+" limit 1 offset "+str(offset)+";\n\copy getline to getlinefile.csv delimiter ',';\n")
+        f.close()
+        os.system("psql -d adherencedb -a -f getline.sql")
+        f=open('getlinefile.csv','r')
+        line=f.readline()
+        f.close()
+        os.system("rm getlinefile.csv getline.sql")
+	return line
+
+
+def getRealStopId():	
+	f=open('allTripIds.csv','r')
+        allTrips=[]
+        for line in f:
+                allTrips.append(line.replace("\n",""))
+
+        f.close()
+	allStops=[]
+	f=open('allStops.csv','r')
+	for line in f:
+		allStops.append(line.replace("\n",""))
+	
+	f.close()
+	
+
+
+
 def simplePredict(all_adh):	
 	all_adh=map(int,all_adh)
 	med=get_median(all_adh[0:-1])
