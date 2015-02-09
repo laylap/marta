@@ -1,6 +1,7 @@
-﻿/* This queries, create all the google_transit(GTFS) tables */
+﻿set schema 'gtfs_april_may';
+/* This queries, create all the google_transit(GTFS) tables */
 
-drop TABLE trips;
+drop TABLE if exists trips;
 CREATE TABLE trips
 (
 route_id VARCHAR(15)
@@ -12,7 +13,7 @@ route_id VARCHAR(15)
 ,shape_id VARCHAR(15)
 );
 
-drop TABLE routes;
+drop TABLE if exists routes;
 CREATE TABLE routes
 (
 route_id VARCHAR(15) PRIMARY KEY
@@ -25,7 +26,7 @@ route_id VARCHAR(15) PRIMARY KEY
 ,route_text_color VARCHAR(15)
 );
 
-drop TABLE stops;
+drop TABLE if exists stops;
 CREATE TABLE stops
 (
 stop_id VARCHAR(15) PRIMARY KEY
@@ -36,7 +37,7 @@ stop_id VARCHAR(15) PRIMARY KEY
 );
 
 
-drop TABLE stop_times;
+drop TABLE if exists stop_times;
 CREATE TABLE stop_times
 (
 trip_id VARCHAR(15)
@@ -46,7 +47,7 @@ trip_id VARCHAR(15)
 ,stop_sequence VARCHAR(15)
 );
 
-drop TABLE shapes;
+drop TABLE if exists shapes;
 CREATE TABLE shapes
 (
 shape_id VARCHAR(15)
@@ -56,7 +57,7 @@ shape_id VARCHAR(15)
 );
 
 
-drop TABLE calendar_dates;
+drop TABLE if exists calendar_dates;
 CREATE TABLE calendar_dates
 (
 service_id VARCHAR(15)
@@ -64,7 +65,7 @@ service_id VARCHAR(15)
 ,exception_type varchar(15) 
 );
 
-drop TABLE calendar;
+drop TABLE if exists calendar;
 CREATE TABLE calendar
 (
 service_id VARCHAR(15)

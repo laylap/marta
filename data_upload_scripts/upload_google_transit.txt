@@ -1,7 +1,7 @@
-﻿\COPY stops from 'C:\Users\LAYLA\Documents\MARTA\google_transit\stops.txt' DELIMITERS ',' CSV HEADER;
-\COPY trips from 'C:\Users\LAYLA\Documents\MARTA\google_transit\trips.txt' DELIMITERS ',' CSV HEADER;
-\COPY routes from 'C:\Users\LAYLA\Documents\MARTA\google_transit\routes.txt' DELIMITERS ',' CSV HEADER;
-\COPY stop_times from 'C:\Users\LAYLA\Documents\MARTA\google_transit\stop_times.txt' DELIMITERS ',' CSV HEADER;
-\COPY shapes from 'C:\Users\LAYLA\Documents\MARTA\google_transit\shapes.txt' DELIMITERS ',' CSV HEADER;
-\COPY calendar_dates from 'C:\Users\LAYLA\Documents\MARTA\google_transit\calendar_dates.txt' DELIMITERS ',' CSV HEADER;
-\COPY calendar from 'C:\Users\LAYLA\Documents\MARTA\google_transit\calendar.txt' DELIMITERS ',' CSV HEADER;
+﻿\COPY gtfs_april_may.stops from 'C:\Users\LAYLA\Documents\GitHub\marta\data\GTFS_Feeds\metropolitan-atlanta-rapid-transit-authority_20140416_0130\stops.txt' DELIMITERS ',' CSV HEADER;
+\COPY gtfs_april_may.trips from 'C:\Users\LAYLA\Documents\GitHub\marta\data\GTFS_Feeds\metropolitan-atlanta-rapid-transit-authority_20140416_0130\trips.txt' DELIMITERS ',' CSV HEADER;
+\COPY gtfs_april_may.routes from 'C:\Users\LAYLA\Documents\GitHub\marta\data\GTFS_Feeds\metropolitan-atlanta-rapid-transit-authority_20140416_0130\routes.txt' DELIMITERS ',' CSV HEADER;
+\COPY gtfs_april_may.stop_times from 'C:\Users\LAYLA\Documents\GitHub\marta\data\GTFS_Feeds\metropolitan-atlanta-rapid-transit-authority_20140416_0130\stop_times.txt' DELIMITERS ',' CSV HEADER;
+\COPY gtfs_april_may.shapes from 'C:\Users\LAYLA\Documents\GitHub\marta\data\GTFS_Feeds\metropolitan-atlanta-rapid-transit-authority_20140416_0130\shapes.txt' DELIMITERS ',' CSV HEADER;
+\COPY gtfs_april_may.calendar_dates from 'C:\Users\LAYLA\Documents\GitHub\marta\data\GTFS_Feeds\metropolitan-atlanta-rapid-transit-authority_20140416_0130\calendar_dates.txt' DELIMITERS ',' CSV HEADER;
+\COPY gtfs_april_may.calendar from 'C:\Users\LAYLA\Documents\GitHub\marta\data\GTFS_Feeds\metropolitan-atlanta-rapid-transit-authority_20140416_0130\calendar.txt' DELIMITERS ',' CSV HEADER;
