@@ -1,6 +1,9 @@
 import os
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec6475e5feee40167aa1305e05fba7a92010211a
 def getStopsAndCoords_Route(route_num):
         f=open('aux.sql','w')
         f.write("DROP TABLE IF EXISTS aux;\nselect stop_id,stop_lat,stop_lon into aux from stops where stop_id in (select stop_id from stop_times where trip_id = (select trip_id from trips where route_id = (select route_id from routes where route_short_name = '"+route_num+"') limit 1 ));;\n\copy aux to auxfile.csv delimiter ',';\n")
@@ -12,9 +15,12 @@ def getStopsAndCoords_Route(route_num):
         os.system("rm auxfile.csv aux.sql")
         return line
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> ec6475e5feee40167aa1305e05fba7a92010211a
 def getStopsAndCoords(trip):
 	f=open('aux.sql','w')
         f.write("DROP TABLE IF EXISTS aux;\nselect stop_id,stop_lat,stop_lon into aux from stops where stop_id in (select stop_id from stop_times where trip_id = '"+str(trip)+"');\n\copy aux to auxfile.csv delimiter ',';\n")
@@ -27,7 +33,10 @@ def getStopsAndCoords(trip):
         return line
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec6475e5feee40167aa1305e05fba7a92010211a
 def getDBLineOffset(db_name,offset):
 	f=open('getline.sql','w')
         f.write("DROP TABLE IF EXISTS getline;\nselect * into getline from "+db_name+" limit 1 offset "+str(offset)+";\n\copy getline to getlinefile.csv delimiter ',';\n")
@@ -40,7 +49,10 @@ def getDBLineOffset(db_name,offset):
 	return line
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec6475e5feee40167aa1305e05fba7a92010211a
 def getRealStopId():	
 	f=open('allTripIds.csv','r')
         allTrips=[]
@@ -56,7 +68,10 @@ def getRealStopId():
 	f.close()
 	
 
+<<<<<<< HEAD
 		
+=======
+>>>>>>> ec6475e5feee40167aa1305e05fba7a92010211a
 
 
 def simplePredict(all_adh):	
@@ -194,10 +209,10 @@ def randomDate(start, end):
 
 def sendmail(subj,msg):
 		import smtplib
-		gmail_user = "danielatemory@gmail.com"
-		gmail_pwd = "new passwor"
-		FROM = 'danielatemory@gmail.com'
-		TO =['dgarci8@emory.edu']
+		gmail_user = "your_own_email@gmail.com"
+		gmail_pwd = "your_password"
+		FROM = 'your_own_email@gmail.com'
+		TO =['destination_email@whatever_domain']
 		SUBJECT = subj
 		TEXT = msg
 		message=""
