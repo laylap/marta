@@ -2,6 +2,6 @@
 create table gps_june_aug_interpolated(
 msgdate  date,
 trip_id  integer,
-stopseq  integer,
-adherence  integer
+stopseq  real,
+adherence  real
 )
